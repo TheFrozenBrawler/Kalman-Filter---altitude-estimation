@@ -24,7 +24,7 @@ noise_presets = {
 
 def main():
     ### DATA AQCUISITION
-    ''' # Time (s);Altitude (m);Vertical velocity (m/s);Vertical acceleration (m/s²);Air pressure (Pa) '''
+    ''' # Time (s); Altitude (m); Vertical velocity (m/s); Vertical acceleration (m/s²); Air pressure (Pa) '''
     # t_real, alt_rel, alt_nos, acc_rel, acc_nos = gauss_nos_zoh_adder(cfg.DATA_FILE_taa, noise_presets, Tp) # gaussian_noise_adder(cfg.DATA_FILE, noise_presets)
     t_real, alt_real, vel_real, acc_real, acc_noise, pre_real, pre_noise = gauss_mach_zoh_noise_adder(cfg.DATA_FILE_tavap, noise_presets, Tp, cfg.mach_n_start)
 
@@ -42,15 +42,13 @@ def main():
     H = np.array([ 1, 0])
 
     Q = np.array([[ Tp**4/4, Tp**3/2 ],
-                [ Tp**3/2, Tp**2   ]]) * cfg.acc_var_easy #* cfg.acc_var_easy
-
-    R_init = 10000
+                  [ Tp**3/2, Tp**2   ]]) * cfg.acc_var_easy
 
     P_init = np.array([[ 50, 0 ],
-                    [ 0, 50 ]])
+                       [ 0, 50 ]])
 
     x_init = np.array([[ 0 ],
-                    [ 0 ]])
+                       [ 0 ]])
 
     ### KALMAN FILTER
     kalman = KalmanFilter(F, G, H, Q, P_init, x_init)

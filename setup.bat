@@ -20,4 +20,4 @@ echo Installing dependencies...
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo Done! Use './run.bat' to run the program.
+echo Setup done! Use './run.bat' to run the program.

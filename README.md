@@ -19,9 +19,7 @@ This Kalman filter is part of a engineering thesis at the end of my bachelor deg
     ./run.bat
     ```
 
-
 ## Project description
-
 ### Project elements
 * **main.py** - main script of the project
 * **KalmanFilter_class.py** - Kalman Filter class with linear KF equations
