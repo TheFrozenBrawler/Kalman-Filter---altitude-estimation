@@ -4,7 +4,7 @@ import config.config as cfg
 from algorithms.KalmanFilter_class import KalmanFilter
 from algorithms.noise_adder import gauss_mach_zoh_noise_adder
 from algorithms.pressure_preprocessing import pressure_preprocessing
-from data.plotting import plot_with_matplotlib, plot_with_plotly
+from data.plotting import plot_with_matplotlib
 
 '''
 The Kalman Filter won't work with gaussian_noise_adder
@@ -97,7 +97,7 @@ def main():
     ### Quality of estimation
     # RMSE
     alt_rmse = np.sqrt(np.mean((np.array(alt_real) - np.array(kalman_alt))**2))
-    print(f"RMSE altitude: {alt_rmse}")
+    print(f"Altitude RMSE: {alt_rmse}")
 
     ### PLOTTING
     plot_with_matplotlib(t_real, alt_meas, kalman_alt, alt_real, kalman_vel, vel_real, acc_noise, acc_real, P_trace)

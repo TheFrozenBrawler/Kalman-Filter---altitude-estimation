@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+# import plotly.graph_objects as go
+# from plotly.subplots import make_subplots
 
 
 ### PLOTTING
@@ -46,29 +46,29 @@ def plot_with_matplotlib(t_real, alt_meas, kalman_alt, alt_real, kalman_vel, vel
     plt.show()
 
 ### PLOTLY
-def plot_with_plotly(t_real, alt_meas, kalman_alt, alt_real, kalman_vel, vel_real, acc_noise, acc_real):
-    # Create subplots
-    fig = make_subplots(rows=3, cols=1, shared_xaxes=True, subplot_titles=("Altitude", "Velocity", "Acceleration"))
+# def plot_with_plotly(t_real, alt_meas, kalman_alt, alt_real, kalman_vel, vel_real, acc_noise, acc_real):
+#     # Create subplots
+#     fig = make_subplots(rows=3, cols=1, shared_xaxes=True, subplot_titles=("Altitude", "Velocity", "Acceleration"))
 
-    # Altitude
-    fig.add_trace(go.Scatter(x=t_real, y=alt_meas, mode='markers', name='altitude measurements', marker=dict(color='green')), row=1, col=1)
-    fig.add_trace(go.Scatter(x=t_real, y=alt_real, mode='lines', name='real height (ZOH)', line=dict(color='red')), row=1, col=1)
-    fig.add_trace(go.Scatter(x=t_real, y=kalman_alt, mode='lines', name='estimated altitude', line=dict(color='blue', dash='dash')), row=1, col=1)
+#     # Altitude
+#     fig.add_trace(go.Scatter(x=t_real, y=alt_meas, mode='markers', name='altitude measurements', marker=dict(color='green')), row=1, col=1)
+#     fig.add_trace(go.Scatter(x=t_real, y=alt_real, mode='lines', name='real height (ZOH)', line=dict(color='red')), row=1, col=1)
+#     fig.add_trace(go.Scatter(x=t_real, y=kalman_alt, mode='lines', name='estimated altitude', line=dict(color='blue', dash='dash')), row=1, col=1)
 
 
-    # Velocity
-    fig.add_trace(go.Scatter(x=t_real, y=kalman_vel, mode='lines', name='estimated velocity', line=dict(color='blue')), row=2, col=1)
-    fig.add_trace(go.Scatter(x=t_real, y=vel_real, mode='lines', name='real velocity', line=dict(color='red', dash='dash')), row=2, col=1)
+#     # Velocity
+#     fig.add_trace(go.Scatter(x=t_real, y=kalman_vel, mode='lines', name='estimated velocity', line=dict(color='blue')), row=2, col=1)
+#     fig.add_trace(go.Scatter(x=t_real, y=vel_real, mode='lines', name='real velocity', line=dict(color='red', dash='dash')), row=2, col=1)
 
-    # Acceleration
-    fig.add_trace(go.Scatter(x=t_real, y=acc_noise, mode='markers', name='acceleration with noise', marker=dict(color='magenta')), row=3, col=1)
-    fig.add_trace(go.Scatter(x=t_real, y=acc_real, mode='lines', name='real acceleration', line=dict(color='green')), row=3, col=1)
+#     # Acceleration
+#     fig.add_trace(go.Scatter(x=t_real, y=acc_noise, mode='markers', name='acceleration with noise', marker=dict(color='magenta')), row=3, col=1)
+#     fig.add_trace(go.Scatter(x=t_real, y=acc_real, mode='lines', name='real acceleration', line=dict(color='green')), row=3, col=1)
 
-    # Update layout
-    fig.update_layout(height=900, width=800, title_text="Kalman Filter Data", showlegend=True)
-    fig.update_xaxes(title_text="Time [s]", row=3, col=1)
-    fig.update_yaxes(title_text="Altitude [m]", row=1, col=1)
-    fig.update_yaxes(title_text="Velocity [m/s]", row=2, col=1)
-    fig.update_yaxes(title_text="Acceleration [m/s^2]", row=3, col=1)
+#     # Update layout
+#     fig.update_layout(height=900, width=800, title_text="Kalman Filter Data", showlegend=True)
+#     fig.update_xaxes(title_text="Time [s]", row=3, col=1)
+#     fig.update_yaxes(title_text="Altitude [m]", row=1, col=1)
+#     fig.update_yaxes(title_text="Velocity [m/s]", row=2, col=1)
+#     fig.update_yaxes(title_text="Acceleration [m/s^2]", row=3, col=1)
 
-    fig.show()
+#     fig.show()
