@@ -1,9 +1,27 @@
 # Kalman Filter Based on Model mk. 2
 This Kalman filter is part of a engineering thesis at the end of my bachelor degree of Automatic Contrioll and Robotics (Automatyka i Robotyka) on Poznan University of Technology.
 
+## Project setup
+### Widnows
+1. Clone repository:
+    ```cmd
+    ```bash
+    git clone https://github.com/TheFrozenBrawler/Kalman-Filter---altitude-estimation
+    cd Kalman-Filter---altitude-estimation
+    ```
+
+2. Run the environment configuration script:
+    ```cmd
+    ./setup.bat
+    ```
+
+3. To run the program, do the following:
+    ```cmd
+    ./run.bat
+    ```
+
+
 ## Project description
-### Starting the project
-To start the project, run python script 'main.py'.
 
 ### Project elements
 * **main.py** - main script of the project
@@ -37,4 +55,6 @@ With given matrices A, B, C, D the differential equation can be solved and writt
 - Improve the Q, P and R matrices 
 - Think about EKF or UKF
 - add apogee detection system based on counting the number of estimated velocity samples equal or less than zero in apogee
-- add P matrix reset to get rid of artifact in the filter 
+- add P matrix reset to get rid of artifact in the filter
+- implement the filter in C
+- test with 2023 flight data
