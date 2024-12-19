@@ -5,7 +5,6 @@ This Kalman filter is part of a engineering thesis at the end of my bachelor deg
 ### Widnows
 1. Clone repository:
     ```cmd
-    ```bash
     git clone https://github.com/TheFrozenBrawler/Kalman-Filter---altitude-estimation
     cd Kalman-Filter---altitude-estimation
     ```
