@@ -2,6 +2,7 @@
 This Kalman filter is part of a engineering thesis at the end of my bachelor degree of Automatic Contrioll and Robotics (Automatyka i Robotyka) on Poznan University of Technology.
 
 ## Project setup
+Created with Python 3.11.9
 ### Widnows
 1. Clone repository:
     ```cmd
