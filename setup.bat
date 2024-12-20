@@ -7,13 +7,15 @@ if errorlevel 1 (
     exit /b 1
 )
 
-:: Check if Python version is 3.11 or higher
-for /f "tokens=2 delims=." %%i in ('python --version 2>&1') do (
-    if %%i LSS 11 (
-        echo Python version 3.11 or higher is required.
-        exit /b 1
-    )
+:: Check if Python version is in required version or higher
+set "python_major=3"
+set "python_minor=11"
+for /f "tokens=2 delims= " %%a in ('python --version 2^>^&1') do for /f "tokens=1,2 delims=." %%b in ("%%a") do (
+    if "%%b"=="%python_major%" if %%c GEQ %python_minor% goto :version_ok
+    echo Python version %python_major%.%python_minor% or higher is required.
+    exit /b 1
 )
+:version_ok
 
 :: Create virtual environment
 echo Creating virtual environment...
@@ -25,7 +27,7 @@ call venv\Scripts\activate
 
 :: Install dependencies
 echo Installing dependencies...
-pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 
 echo Setup done! Use '.\run.bat' to run the program.
