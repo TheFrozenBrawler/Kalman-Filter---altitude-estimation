@@ -11,12 +11,12 @@ This Kalman filter is part of a engineering thesis at the end of my bachelor deg
 
 2. Run the environment configuration script:
     ```cmd
-    ./setup.bat
+    .\setup.bat
     ```
 
 3. To run the program, do the following:
     ```cmd
-    ./run.bat
+    .\run.bat
     ```
 
 ## Project description
@@ -55,3 +55,4 @@ With given matrices A, B, C, D the differential equation can be solved and writt
 - add P matrix reset to get rid of artifact in the filter
 - implement the filter in C
 - test with 2023 flight data
+- handling N/A data, especially in the apogee region

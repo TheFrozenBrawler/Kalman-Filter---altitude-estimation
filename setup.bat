@@ -7,6 +7,14 @@ if errorlevel 1 (
     exit /b 1
 )
 
+:: Check if Python version is 3.11 or higher
+for /f "tokens=2 delims=." %%i in ('python --version 2>&1') do (
+    if %%i LSS 11 (
+        echo Python version 3.11 or higher is required.
+        exit /b 1
+    )
+)
+
 :: Create virtual environment
 echo Creating virtual environment...
 python -m venv venv
@@ -20,4 +28,4 @@ echo Installing dependencies...
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo Setup done! Use './run.bat' to run the program.
+echo Setup done! Use '.\run.bat' to run the program.
